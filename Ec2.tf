@@ -9,7 +9,7 @@ terraform {
 
 provider "aws" {
   region     = "us-east-1"
-  
+
 }
 
 terraform { 
@@ -120,9 +120,9 @@ resource "aws_instance" "vm" {
 
     connection {
       type        = "ssh"
-      user        = "root"
+      user        = "Abdel"
       private_key = file("./terraform_cle.pem")
-      host        = aws_instance.vm.public_ip
+      host        = self.public_ip 
     }
   }
 
