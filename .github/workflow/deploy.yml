@@ -1,12 +1,11 @@
-name: Terraform Deployment
-
+name: Terraform-Deployment
 
 on:
   push:
     branches:
       - main  # Déclenche le workflow sur des pushs vers la branche main
 
-
+      
 jobs:
   terraform:
     name: Setup Terraform
