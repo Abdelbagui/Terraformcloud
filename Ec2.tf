@@ -110,21 +110,21 @@ resource "aws_instance" "vm" {
     Name = "Abdel_EC2_hassan"
   }
 
-  # Provisioner pour installer et démarrer Nginx
-  provisioner "remote-exec" {
-    inline = [
-      "sudo apt update -y",
-      "sudo apt install nginx -y",
-      "sudo systemctl start nginx"
-    ]
+  # # Provisioner pour installer et démarrer Nginx
+  # provisioner "remote-exec" {
+  #   inline = [
+  #     "sudo apt update -y",
+  #     "sudo apt install nginx -y",
+  #     "sudo systemctl start nginx"
+  #   ]
 
-    connection {
-      type        = "ssh"
-      user        = "Abdel"
-      private_key = file("./terraform_cle.pem")
-      host        = self.public_ip 
-    }
-  }
+  #   connection {
+  #     type        = "ssh"
+  #     user        = "Abdel"
+  #     private_key = file("./terraform_cle.pem")
+  #     host        = self.public_ip 
+  #   }
+  # }
 
   # Vous pouvez omettre 'depends_on' pour éviter les cycles
 }
