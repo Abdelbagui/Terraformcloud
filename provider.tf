@@ -13,3 +13,14 @@ provider "aws" {
   # access_key = "AKIAQEIP3VX3H7KG4UGP"
   # secret_key = "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"
 }
+
+terraform { 
+  cloud { 
+    
+    organization = "ABDELBAGUI" 
+
+    workspaces { 
+      name = "abdel_workspace" 
+    } 
+  } 
+}
