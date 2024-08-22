@@ -1,12 +1,3 @@
-# Déclaration du groupe de sous-réseaux pour RDS
-resource "aws_db_subnet_group" "rds_subnet_group" {
-  name       = "rds-subnet-group"
-  subnet_ids = [aws_subnet.private_subnet1.id, aws_subnet.private_subnet2.id]
-
-  tags = {
-    Name = "rds-subnet-group"
-  }
-}
 
 # Déclaration du groupe de sécurité pour RDS
 resource "aws_security_group" "rds_sg" {
