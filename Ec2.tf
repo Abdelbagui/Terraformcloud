@@ -101,7 +101,7 @@ resource "aws_security_group" "allow_ssh_web" {
 # Création de l'instance EC2 sans l'Elastic IP
 resource "aws_instance" "vm" {
   ami                    = data.aws_ami.app_ami.id
-  instance_type          = "t2.micro"
+  instance_type          = var.instance_type
   key_name               = "terraform_cle"
   vpc_security_group_ids = [aws_security_group.allow_ssh_web.id]
   subnet_id              = aws_subnet.main.id
